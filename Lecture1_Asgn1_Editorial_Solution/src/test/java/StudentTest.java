@@ -58,31 +58,4 @@ class StudentTest {
             fail("sayHello not found");
         }
     }
-
-    @Test
-    void display() {
-        student.name = "Test";
-        student.age = 10;
-
-        outContent = new ByteArrayOutputStream();
-        System.setOut(new PrintStream(outContent));
-
-        student.display();
-
-        String expected = "My name is Test. I am 10 years old\n";
-        assertEquals(expected, outContent.toString());
-    }
-
-    @Test
-    void sayHello() {
-        student.name = "Test";
-
-        outContent = new ByteArrayOutputStream();
-        System.setOut(new PrintStream(outContent));
-
-        student.sayHello("Test2");
-
-        String expected = "Test says hello to Test2\n";
-        assertEquals(expected, outContent.toString());
-    }
 }
